@@ -43,9 +43,8 @@ export default function Login() {
     const signIn = useSignIn()
     const [formData, setFormData] = React.useState({email: '', password: ''})
 
-    const register=()=>{
-        navigate('/register')
-        window.location.reload()
+    function register() {
+        window.location.href='https://platform.allcine227.com/register'
     }
     const reset=()=>{
         navigate('/reset-password')
@@ -55,7 +54,7 @@ export default function Login() {
     const onSubmit = (e) => {
    setC(c+1)
         e.preventDefault()
-        axios.post('platform.allcine227.com/api/login_check', formData)
+        axios.post('https://platform.allcine227.com/api/login_check', formData)
             .then((res) => {
                 console.log(res)
                 if (res.status === 200) {
@@ -68,7 +67,7 @@ export default function Login() {
                         authState: res.config.data
                     }))
                     {
-                        navigate('/react/menu')
+                        navigate('menu')
                     }
                     else {
 
@@ -150,7 +149,7 @@ export default function Login() {
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href={''} onClick={register} variant="body2">
+                                <Link href={'https://platform.allcine227.com/register'} variant="body2">
                                     {"creé un compte"}
                                 </Link>
                             </Grid>

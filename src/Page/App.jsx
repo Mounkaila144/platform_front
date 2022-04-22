@@ -1,15 +1,10 @@
 import * as React from 'react';
-import * as PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import {Outlet, Link, UNSAFE_RouteContext} from "react-router-dom";
-import ProductCard from "../components/card/ProductCard";
 import HeaderPhone from "../components/header/App";
 import Home from "../components/Home";
 import {green, pink} from "@mui/material/colors";
-import {bindTrigger} from "material-ui-popup-state";
-import Button from "@mui/material/Button";
-import {Pagination} from "@mui/material";
-import Typography from "@mui/material/Typography";
+
 
 export default function App() {
     const [cart, updateCart] = useState([])
